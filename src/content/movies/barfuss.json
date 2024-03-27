@@ -1,0 +1,10 @@
+{
+  "id": "barfuss",
+  "mediaId": "3",
+  "title": "Barfuss",
+  "language": "de",
+  "genres": ["Drama", "Romance", "Comedy"],
+  "directors": ["Til Schweiger"],
+  "actors": ["Til Schweiger", "Johanna Wokalek", "Nadja Tiller"],
+  "cover": "barfuss.jpg"
+}

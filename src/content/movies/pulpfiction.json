@@ -1,0 +1,18 @@
+{
+  "id": "pulpfiction",
+  "mediaId": "18",
+  "title": "Pulp Fiction",
+  "language": "en",
+  "genres": ["Pulp"],
+  "directors": ["Quentin Tarantino"],
+  "actors": [
+    "Samuel Jackson",
+    "John Travolta",
+    "Uma Thurman",
+    "Bruce Willis",
+    "Tim Roth",
+    "Amanda Plummer",
+    "Laura Lovelace"
+  ],
+  "cover": "pulpfiction.jpg"
+}

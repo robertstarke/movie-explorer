@@ -1,0 +1,10 @@
+{
+  "id": "sevensamurai",
+  "mediaId": "19",
+  "title": "Seven Samurai",
+  "language": "jp",
+  "genres": ["Drama", "Action"],
+  "directors": ["Akira Kurosawa"],
+  "actors": ["Toshiro Mifune", "Takashi Shimura", "Keiko Tsushima"],
+  "cover": "sevensamurai.jpg"
+}

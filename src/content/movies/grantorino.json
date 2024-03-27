@@ -1,0 +1,10 @@
+{
+  "id": "grantorino",
+  "mediaId": "15",
+  "title": "Gran Torino",
+  "language": "en",
+  "genres": ["Drama"],
+  "directors": ["Clint Eastwood"],
+  "actors": ["Clint Eastwood", "Brian Howe"],
+  "cover": "grantorino.jpg"
+}

@@ -1,0 +1,14 @@
+---
+const { mediaId, title } = Astro.props;
+const MEDIA_SERVER_IP = import.meta.env.MEDIA_SERVER_IP;
+const MEDIA_SERVER_PORT = import.meta.env.MEDIA_SERVER_PORT;
+---
+
+<a
+  href={`https://${MEDIA_SERVER_IP}:${MEDIA_SERVER_PORT}/item?id=${mediaId}&text=this_should_link_to_home_server_or_streaming_service`}
+  title={`Open ${title} on media server`}
+  target="_blank"
+  class="group block w-full h-full"
+>
+  <slot />
+</a>

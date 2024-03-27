@@ -1,0 +1,10 @@
+{
+  "id": "disneymoana",
+  "mediaId": "14",
+  "title": "Disney Moana",
+  "language": "en",
+  "genres": ["animation"],
+  "favorite": true,
+  "cover": "disneymoana.jpg",
+  "childSafe": true
+}

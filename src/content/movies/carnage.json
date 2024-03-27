@@ -1,0 +1,15 @@
+{
+  "id": "carnage",
+  "mediaId": "9",
+  "title": "Carnage",
+  "language": "en",
+  "genres": ["Comedy"],
+  "directors": ["Roman Polanski"],
+  "actors": [
+    "Christoph Waltz",
+    "Kate Winslet",
+    "Jodie Foster",
+    "John C. Reilly"
+  ],
+  "cover": "carnage.jpg"
+}

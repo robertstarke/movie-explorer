@@ -1,0 +1,10 @@
+{
+  "id": "12angrymen",
+  "mediaId": "1",
+  "title": "12 Angry Men",
+  "language": "en",
+  "genres": ["Drama"],
+  "directors": ["Reginald Rose"],
+  "actors": ["Henry Fonda", "Lee J Cobb"],
+  "cover": "12angrymen.jpg"
+}

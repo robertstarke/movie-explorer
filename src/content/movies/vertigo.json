@@ -1,0 +1,18 @@
+{
+  "id": "vertigo",
+  "mediaId": "20",
+  "title": "Vertigo",
+  "language": "en",
+  "genres": ["Romance", "Thriller"],
+  "directors": ["Alfred Hitchcock"],
+  "actors": [
+    "James Stewart",
+    "Kim Novak",
+    "Henry Jones",
+    "Tom Helmore",
+    "Raymond Bailey",
+    "Ellen Corby",
+    "Konstantin Shayne"
+  ],
+  "cover": "vertigo.jpg"
+}

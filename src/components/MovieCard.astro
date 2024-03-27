@@ -1,0 +1,37 @@
+---
+import MediaLink from "./MediaLink.astro";
+
+const { movie, show } = Astro.props;
+---
+
+<div
+  x-data
+  x-show={show}
+  id={movie.id}
+  class="movieCard group relative border border-zinc-600 rounded-lg transition-all duration-300 overflow-hidden has-[:focus]:ring-offset-zinc-800 has-[:focus]:ring-offset-4 has-[:focus]:ring-4 has-[:focus]:ring-green-600"
+>
+  <MediaLink
+    mediaId={movie.mediaId}
+    title={movie.title}
+    shortcut={movie.shortcut}
+  >
+    <div
+      class="absolute top-0 left-0 z-10 w-full px-2 py-1 flex flex-row justify-between gap-4 bg-zinc-600/75 text-base text-zinc-200"
+    >
+      <span>{movie.title}</span>
+      <img
+        src={`/movie-db/filters/languages/${movie.language}.svg`}
+        alt={movie.language}
+        class="inline w-5 h-5"
+      />
+    </div>
+
+    <div class="relative z-0 w-full h-full">
+      <img
+        src={`/movie-db/covers/${movie.cover}`}
+        alt=""
+        class="cover z-0 h-full w-full object-fill transition-transform duration-300 group-hover:scale-110 group-focus:scale-110"
+      />
+    </div>
+  </MediaLink>
+</div>

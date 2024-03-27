@@ -1,0 +1,29 @@
+---
+import EmbyLink from "./MediaLink.astro";
+
+const { playlist } = Astro.props;
+---
+
+<div
+  class="playlistCard group relative border border-zinc-600 rounded-lg transition-all duration-300 overflow-hidden has-[:focus]:ring-offset-zinc-800 has-[:focus]:ring-offset-4 has-[:focus]:ring-4 has-[:focus]:ring-green-600"
+>
+  <EmbyLink
+    embyId={playlist.embyId}
+    title={playlist.title}
+    shortcut={playlist.shortcut}
+  >
+    <div
+      class="z-10 absolute top-0 left-0 w-full p-1 bg-zinc-600/75 text-base text-center text-zinc-200"
+    >
+      {playlist.title}
+    </div>
+
+    <div class="z-0 relative w-full h-full max-h-64 overflow-hidden">
+      <img
+        class="cover w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
+        src={`/movie-db/playlists/${playlist.cover}`}
+        alt=""
+      />
+    </div>
+  </EmbyLink>
+</div>

@@ -1,0 +1,10 @@
+{
+  "id": "disneyencanto",
+  "mediaId": "13",
+  "title": "Disney Encanto",
+  "language": "en",
+  "genres": ["animation"],
+  "favorite": true,
+  "cover": "disneyencanto.jpg",
+  "childSafe": true
+}

@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+import MovieCard from "../components/MovieCard.astro";
+
+const movies = await getCollection("movies");
+
+const languageFilters = [
+  { id: "en", code: "ENG", name: "English" },
+  { id: "de", code: "DEU", name: "German" },
+  { id: "fr", code: "FRA", name: "French" },
+  { id: "jp", code: "JAP", name: "Japanese" },
+];
+---
+<script is:inline src="/movie-db/js/fuse.min.js"></script>
+
+<Layout title="All Movies">
+  <div id="moviesWrapper" x-data="searchModel" data-movies={JSON.stringify(movies)}>
+  <section class="flex flex-row justify-center items-center gap-6">
+    <input
+      x-ref="searchInput"
+      x-model.debounce="search"
+      x-on:keyup.esc.prevent="$refs.searchInput._x_model.set('')"
+      id="search"
+      type="text"
+      placeholder="Search for Movie, Actor or Genre"
+      class="block w-72 px-4 py-2 rounded-full bg-zinc-300 text-zinc-800 placeholder:text-zinc-500 focus:outline-none focus:ring-4 focus:ring-green-600"
+      tabindex="1"
+    />
+    <div id="filters" class="flex flex-row gap-6">
+      <div id="filterLanguages" class="flex flex-row gap-6">
+        {languageFilters.map(({id, code, name}, index) => (
+          <label
+            for={id}
+            class="w-11 h-9 p-1 rounded-md transition-all focus:outline-none focus:scale-110 cursor-pointer"
+            x-bind:class=`languages.includes('${id}') ? 'bg-green-600' : 'bg-zinc-300'`
+            tabindex=`${index + 1}`
+          >
+            <input x-model="languages" type="checkbox" id={id} value={id} class="hidden"/>
+            <img
+              src=`/movie-db/filters/languages/${id}.svg`
+              alt=`${code}`
+              alt=`Filter for ${name} Movies`
+              class="w-9 h-7"
+            />
+          </label>
+        ))}
+      </div>
+      <div id="filterChildSafe" class="flex flex-row">
+        <label
+          for="childSafe"
+          class="w-11 h-9 p-1 rounded-md transition-all focus:outline-none focus:scale-110 cursor-pointer"
+          x-bind:class="childSafe ? 'bg-green-600' : 'bg-zinc-300'"
+          tabindex="7"
+        >
+          <input x-model="childSafe" type="checkbox" id="childSafe" class="hidden"/>
+          <img
+            src="/movie-db/filters/childsafe.svg"
+            alt="Filter for child-safe Movies"
+            class="w-9 h-7"
+          />
+        </label>
+      </div>
+    </div>
+  </section>
+  <section
+    id="movies"
+    class="m-6 grid grid-cols-6 gap-6"
+    data-movies={JSON.stringify(movies)}
+  >
+    {movies.map(({ data: movie }) => (
+      <MovieCard
+        movie={movie}
+        show=`filterMovies.includes('${movie.id}') && (languages.length === 0 || languages.includes('${movie.language}')) && (childSafe === false || ${movie.childSafe})` />
+    ))}
+  </section>
+</Layout>
+
+<script is:inline>
+  const movies = JSON.parse(document.getElementById("moviesWrapper").dataset.movies);
+  console.log(JSON.stringify(movies));
+  const fuse = new Fuse(movies, {
+    minMatchCharLength: 2,
+    threshold: 0.2,
+    keys: ["data.id", { name: "data.title", weight: 2 }, "data.genres", "data.directors", "data.actors"],
+  });
+
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('searchModel', () => ({
+      childSafe: false,
+      languages: [],
+      search: "",
+      allMovies: movies,
+      get filterMovies () {
+        if (this.search.length >= 2) {
+          const results = fuse.search(this.search);
+          console.log(`search called with ${this.search} results ${JSON.stringify(results)}`);
+          return results.map(({ item }) => item.id);
+        } else {
+          return this.allMovies.map((item) => item.id);
+        }
+      }
+    }));
+  });
+</script>

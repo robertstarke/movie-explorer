@@ -1,0 +1,16 @@
+{
+  "id": "matrix",
+  "mediaId": "17",
+  "title": "Matrix",
+  "language": "en",
+  "genres": ["SciFi", "Action"],
+  "actors": [
+    "Keanu Reeves",
+    "Laurence Fishburne",
+    "Carrie-Anne Moss",
+    "Hugo Weaving",
+    "Gloria Foster"
+  ],
+  "cover": "matrix.jpg",
+  "favorite": true
+}

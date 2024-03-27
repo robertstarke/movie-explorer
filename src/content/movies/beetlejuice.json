@@ -1,0 +1,10 @@
+{
+  "id": "beetlejuice",
+  "mediaId": "7",
+  "title": "Beetlejuice",
+  "language": "en",
+  "genres": ["Comedy", "Horror"],
+  "directors": ["Tim Burton"],
+  "actors": ["Alec Baldwin", "Geena Davis", "Michael Keaton"],
+  "cover": "beetlejuice.jpg"
+}

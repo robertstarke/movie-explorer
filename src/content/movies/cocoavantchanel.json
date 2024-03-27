@@ -1,0 +1,16 @@
+{
+  "id": "cocoavantchanel",
+  "mediaId": "11",
+  "title": "Coco Avant Chanel",
+  "language": "fr",
+  "genres": ["Biography", "Drama"],
+  "directors": ["Anne Fontaine"],
+  "actors": [
+    "Audrey Tautou",
+    "Benoît Poelvoorde",
+    "Alessandro Nivola",
+    "Marie Gillain",
+    "Emanuelle Devos"
+  ],
+  "cover": "cocoavantchanel.jpg"
+}

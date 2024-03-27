@@ -1,0 +1,15 @@
+{
+  "id": "cassandrasdream",
+  "mediaId": "10",
+  "title": "Cassandras Dream",
+  "language": "en",
+  "genres": ["Drama"],
+  "directors": ["Woody Allen"],
+  "actors": [
+    "Colin Farrell",
+    "Ewan McGregor",
+    "Hayley Atwell",
+    "Tom Wilkinson"
+  ],
+  "cover": "cassandrasdream.jpg"
+}
